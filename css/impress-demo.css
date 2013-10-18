@@ -256,42 +256,72 @@ a:focus {
     3D positioning along Z axis.
 */
 
+h1, h2, h3 {
+    text-align: center;
+}
+
 h1 {
     font-size: 100px;
-    text-align: center;
 }
 
 h2 {
     font-size: 75px;
-    text-align: center;
 }
 
 h3 {
     font-size: 50px;
-    text-align: center;
-    font-weight: bold;
 }
 
-#title img {
+li {
+    margin-left: 100px;
+}
+
+.step img {
     display: block;
     margin: 0 auto;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 #contents h2 {
     font-weight: bold;
 }
 
-#contents li {
-    margin-left: 100px;
-}
-
 .intro h3 {
     margin-bottom: 100px;
+    font-weight: bold;
 }
 
 .intro p {
     font-size: 35px;
     margin: 20px auto;
+}
+
+#today {
+    font-size: 250px;
+}
+
+#spa-examples img {
+    display: inline-block;
+    max-width: 400px;
+    max-height: 300px;
+}
+
+#spa-frameworks img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 270px;
+    max-height: 200px;
+    margin: 15px 5px;
+}
+
+#ember-team p {
+    font-size: 35px;
+    margin: 20px auto;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 /*
