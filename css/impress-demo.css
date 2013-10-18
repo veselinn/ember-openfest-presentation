@@ -276,6 +276,16 @@ li {
     margin-left: 100px;
 }
 
+.step pre {
+    border-radius: 15px;
+    background-color: rgba(115, 99, 81, 0.2);
+    padding: 15px;
+}
+
+.step code, .step pre {
+    font-size: 23px;
+}
+
 .step img {
     display: block;
     margin: 0 auto;

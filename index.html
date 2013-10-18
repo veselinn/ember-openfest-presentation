@@ -286,7 +286,122 @@
         <p>Tom Dale, Peter Wagenet, Trek Glowacki &amp; many more</p>
     </div>
 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    <div class="step" data-x="4500" data-y="6000">
+        <h3>Ember Object model</h3>
+        <img src="images/building-blocks.jpg" />
+    </div>
+
+    <div class="step" data-x="6000" data-y="6000">
+        <h3>Creating custom classes:</h3>
+    <pre class="prettyprint"><code class="language-javascript">Man = Ember.Object.extend({
+  hobbies: [],
+  dislikes: [],
+  firstName: '',
+  familyName: '',
+
+  sayCatchPhrase: function () { }
+});        </code></pre>
+    </div>
+
+    <div class="step" data-x="0" data-y="7500">
+        <h3>Extending custom classes</h3>
+        <pre class="prettyprint"><code class="language-javascript">AverageJoe = Man.extend({
+  hobbies: ['lying around'],
+  dislikes: ['working'],
+
+  sayCatchPhrase: function () {
+    console.log("Let's go to the coffee shop?");
+  }
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="1500" data-y="7500">
+        <h3>Creating instances</h3>
+    <pre class="prettyprint"><code class="language-javascript">var arnold = Man.create({
+  firstName: 'Arnold',
+  familyName: 'Schwarzenegger'
+  hobbies: ['kicking asses', 'shooting with his shotgun', 'being BACK!'],
+  dislikes: ['someone else eating his cookies'],
+
+  sayCatchPhrase: function () {
+    console.log('I WILL BE BACK!!!');
+  }
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="7500">
+        <h3>Using mixins(1)</h3>
+        <pre class="prettyprint"><code class="language-javascript">SuperPowers = Ember.Mixin.create({
+  powers: []
+});
+
+SuperHero = Man.extend(SuperPowers, {
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="4500" data-y="7500">
+        <h3>Using mixins(2)</h3>
+        <pre class="prettyprint"><code class="language-javascript">var superMario = SuperHero.create({
+  firstName: 'Mario',
+  hobbies: ['Saving the princess', 'Eating shrooms', 'Stomping goombas'],
+  dislikes: ['turtles', 'goombas'],
+
+  powers: ['jumping', 'breaking bricks', 'going into pipes', 'fire flower!!!'],
+
+  sayCatchPhrase: function() {
+    console.log("Ita sa mii Mario!!!");
+  }
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="6000" data-y="7500">
+        <h3>Computed properties(1)</h3>
+        <pre class="prettyprint"><code class="language-javascript">Bulgarian = AverageJoe.extend({
+  nickname: '',
+
+  sayCatchPhrase: function() {
+    console.log("Let's drink some Beer/Rakia/Vodka/Rom/Antifreeze!?");
+  },
+
+  fullName: function() {
+    var firstName = this.get('firstName'),
+        familyName = this.get('familyName'),
+        nickname = this.get('nickname');
+
+    return "%@ %@ - %@".fmt(firstName, familyName, nickname);
+  }.property('firstName', 'familyName', 'nickname')
+});</code></pre>
+    </div> 
+
+    <div class="step" data-x="0" data-y="9000">
+        <h3>Computed properties(2)</h3>
+        <pre class="prettyprint"><code class="language-javascript">var meddle = Bulgarian.create({
+  firstName: 'Nickolay',
+  familyName: 'Tzvetinov',
+  nickname: 'Meddle'
+});
+
+var misho = Bulgarian.create({
+  firstName: 'Mihail',
+  familyName: 'Mihailov',
+  nickname: 'Shamara'
+});
+
+meddle.fullName(); // eval code
+misho.fullName(); //eval code</code></pre>
+    </div> 
+
+    <div class="step" data-x="1500" data-y="9000">
+        <h3>Lots fo goodies</h3>
+        <img src="images/sugar-spice-everything-nice.jpg" />
+    </div>
+
+    <div class="step" data-x="3000" data-y="9000">
+        <h3>Architecture</h3>
+        <img src="images/emberjs-architecture.png" />
+    </div>
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="15" data-rotate-z="90">
     </div> 
     <!--
         
@@ -501,6 +616,7 @@ if ("ontouchstart" in document.documentElement) {
     Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
     
 -->
+<script src="js/google-code-prettify/run_prettify.js"></script>
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
 
