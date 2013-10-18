@@ -149,7 +149,7 @@
 
     <div class="step" id="title" data-x="0" data-y="0">
         <h1>Ember.js</h1>
-        </h3>A Single Page Application Framework</h3>
+        <h3>A Single Page Application Framework</h3>
         <img src="images/emberjs-logo.png" />
     </div>
 
@@ -330,6 +330,10 @@
     </div>
 
     <div class="step" data-x="3000" data-y="7500">
+        <img src="images/arnold-glass.jpg" />
+    </div>
+
+    <div class="step" data-x="4500" data-y="7500">
         <h3>Using mixins(1)</h3>
         <pre class="prettyprint"><code class="language-javascript">SuperPowers = Ember.Mixin.create({
   powers: []
@@ -339,7 +343,7 @@ SuperHero = Man.extend(SuperPowers, {
 });</code></pre>
     </div>
 
-    <div class="step" data-x="4500" data-y="7500">
+    <div class="step" data-x="6000" data-y="7500">
         <h3>Using mixins(2)</h3>
         <pre class="prettyprint"><code class="language-javascript">var superMario = SuperHero.create({
   firstName: 'Mario',
@@ -354,7 +358,7 @@ SuperHero = Man.extend(SuperPowers, {
 });</code></pre>
     </div>
 
-    <div class="step" data-x="6000" data-y="7500">
+    <div class="step" data-x="0" data-y="9000">
         <h3>Computed properties(1)</h3>
         <pre class="prettyprint"><code class="language-javascript">Bulgarian = AverageJoe.extend({
   nickname: '',
@@ -373,7 +377,7 @@ SuperHero = Man.extend(SuperPowers, {
 });</code></pre>
     </div> 
 
-    <div class="step" data-x="0" data-y="9000">
+    <div class="step" data-x="1500" data-y="9000">
         <h3>Computed properties(2)</h3>
         <pre class="prettyprint"><code class="language-javascript">var meddle = Bulgarian.create({
   firstName: 'Nickolay',
@@ -391,17 +395,130 @@ meddle.fullName(); // eval code
 misho.fullName(); //eval code</code></pre>
     </div> 
 
-    <div class="step" data-x="1500" data-y="9000">
+    <div class="step" data-x="3000" data-y="9000">
         <h3>Lots fo goodies</h3>
         <img src="images/sugar-spice-everything-nice.jpg" />
     </div>
 
-    <div class="step" data-x="3000" data-y="9000">
+    <div class="step" id="ember-architecture" data-x="4500" data-y="9000">
         <h3>Architecture</h3>
         <img src="images/emberjs-architecture.png" />
     </div>
 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="15" data-rotate-z="90">
+    <div class="step" id="define-app" data-x="6000" data-y="9000">
+        <h3>Defining an application</h3>
+        <pre class="prettyprint"><code class="language-javascript">window.TaskManagement = Ember.Application.create({
+  rootElement: '#ember_content'
+});</code></pre>
+    </div>
+
+    <div class="step" id="define-router" data-x="0" data-y="10500">
+        <h3>Defining the router</h3>
+        <p>The router is responsible for displaying templates, loading data, and otherwise setting up application state.</p>
+        <pre class="prettyprint"><code class="language-javascript">TaskManagement.Router.map(function () {
+  this.resource('tasks', function () {
+    this.route('new');
+    this.resource('task', function () {
+      this.route('view', {
+        path: '/:task_id'
+      });
+    });
+  });
+});</code></pre>
+    <pre class="urls">/tasks
+/tasks/new
+/tasks/task
+/tasks/task/view/[id]</pre>
+    </div>
+
+    <div class="step" data-x="1500" data-y="10500">
+        <img src="images/stalin-mario.jpg" />
+    </div>
+
+    <div class="step" data-x="3000" data-y="10500">
+        <h3>Route</h3>
+        <p>The route is a definition of a state of the application. It specifies how to get the data for the state.</p>
+        <pre class="prettyprint"><code class="language-javascript">TaskManagement.TasksRoute = Ember.Route.extend({
+  model: function() {
+    return TaskManagement.Task.find();
+  },
+  actions: {
+    destroyTask: function(task) {
+      task.delete();
+    }
+  }
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="4500" data-y="10500">
+        <h3>Controller</h3>
+        <p>Controllers allow you to decorate your models with display logic. They keep the application state.</p>
+        <pre class="prettyprint"><code class="language-javascript">TaskManagement.TasksController = Ember.ArrayController.extend({
+  sortProperties: ['description'],
+
+  actions: {
+    sort: function(prop) {
+      return this.set('sortProperties', [prop]);
+    }
+  }
+});</code></pre>
+    </div>
+
+    <div class="step" data-x="6000" data-y="10500">
+        <img src="images/hang-on.jpg" />
+    </div>
+
+    <div class="step" id="views-templates-1" data-x="0" data-y="12000">
+        <h3>Views &amp; Templates(1)</h3>
+        <pre class="prettyprint"><code class="language-javascript">&lt;h1&gt;Tasks&lt;/h1&gt;
+&lt;p&gt; {{#linkTo &quot;tasks.new&quot; class=&quot;btn btn-new-task&quot;}}
+    &lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt; New task
+    {{/linkTo}} 
+&lt;/p&gt;
+&lt;table class=&quot;table tasks&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;created_at&quot;}}&gt; Created: &lt;/a&gt; &lt;/th&gt;
+        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;owner.email&quot;}}&gt; Assigner: &lt;/a&gt; &lt;/th&gt;
+        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;performer.email&quot;}}&gt; Assignee: &lt;/a&gt; &lt;/th&gt;
+        &lt;th class=&quot;span4&quot;&gt; &lt;a {{action sort &quot;description&quot;}}&gt; Description: &lt;/a&gt; &lt;/th&gt;
+        &lt;th class=&quot;span1&quot;&gt; &lt;a {{action sort &quot;state&quot;}}&gt; Status: &lt;/a&gt; &lt;/th&gt;
+        &lt;th class=&quot;span1&quot;&gt; Options &lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+...</code></pre>
+    </div>
+
+    <div class="step" id="views-templates-2" data-x="1500" data-y="12000">
+        <h3>Views &amp; Templates(2)</h3>
+        <pre class="prettyprint"><code class="language-javascript">...
+    &lt;tbody&gt;
+    {{#each task in controller.arrangedContent}}
+        &lt;tr&gt;
+          &lt;td&gt; {{task.created_at}} &lt;/td&gt;
+          &lt;td&gt; {{task.owner.email}} &lt;/td&gt;
+          &lt;td&gt; {{task.performer.email}} &lt;/td&gt;
+          &lt;td class=&quot;task-description&quot;&gt; {{task.description}} &lt;/td&gt;
+          &lt;td&gt; {{task.state}} &lt;/td&gt;
+          &lt;td&gt; &lt;div class=&quot;btn-group task-options pull-right&quot;&gt;
+              {{#linkTo &quot;task.view&quot; task class=&quot;btn-view-task&quot;}}
+                &lt;i class=&quot;icon-eye-open&quot;&gt;&lt;/i&gt;
+              {{/linkTo}}
+              &lt;a class=&quot;btn-delete-task&quot; {{action destroyTask task}}&gt;
+                &lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;
+              &lt;/a&gt;
+          &lt;/div&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+    {{/each}}
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+
+    <div class="step" data-x="3000" data-y="12000">
+        <img src="images/happy-minions.jpg" />
+    </div>
+
+    <div id="overview" class="step" data-x="3000" data-y="4500" data-scale="15" data-rotate-z="90">
     </div> 
     <!--
         
