@@ -94,12 +94,6 @@ body {
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
 }
 
-.fire {
-    width: 5000px;
-    height: 400px;
-    background-color: green;
-}
-
 /*
     Now let's bring some text styles back ...
 */
@@ -193,7 +187,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.1;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -270,6 +264,7 @@ h2 {
 
 h3 {
     font-size: 50px;
+    margin-bottom: 15px;
 }
 
 li {
@@ -363,12 +358,43 @@ p {
     font-family: monospace;
 }
 
-#views-templates-1 pre, #views-templates-1 code {
-    font-size: 20px;
-}
-
 #views-templates-2 pre, #views-templates-2 code {
     font-size: 19px;
+}
+
+#ember-data h3 {
+    margin-bottom: 40px;
+}
+
+#ember-data img, #ember-data ul {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#custom-adapters div {
+    position: relative;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+}
+
+#custom-adapters img:first-child {
+    position: relative;
+    top: 37px;
+}
+
+#custom-adapters img {
+    display: inline-block;
+    max-height: 40%;
+    max-width: 50%;
+}
+
+#web-apps h3 {
+    margin-bottom: 30px;
+}
+
+#web-apps img {
+    width: 80%;
 }
 
 /*

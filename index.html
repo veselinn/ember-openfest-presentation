@@ -161,8 +161,9 @@
             <li>Problems writting SPAs/RIAs</li>
             <li>Ember.js to the rescue</li>
             <li>Problems with Ember.js</li>
-            <li>Verdict</li>
-            <li>Q &amp; A</li>
+            <li>Conclusion</li>
+            <li>Resources</li>
+            <li>Questions</li>
         </ul>
     </div>
 
@@ -364,7 +365,7 @@ SuperHero = Man.extend(SuperPowers, {
   nickname: '',
 
   sayCatchPhrase: function() {
-    console.log("Let's drink some Beer/Rakia/Vodka/Rom/Antifreeze!?");
+    console.log("Let's drink some Beer/Rakia/Vodka/Rum/Antifreeze!?");
   },
 
   fullName: function() {
@@ -396,7 +397,7 @@ misho.fullName(); //eval code</code></pre>
     </div> 
 
     <div class="step" data-x="3000" data-y="9000">
-        <h3>Lots fo goodies</h3>
+        <h3>Lots of goodies</h3>
         <img src="images/sugar-spice-everything-nice.jpg" />
     </div>
 
@@ -475,6 +476,12 @@ misho.fullName(); //eval code</code></pre>
     &lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt; New task
     {{/linkTo}} 
 &lt;/p&gt;
+...</code></pre>
+    </div>
+
+    <div class="step" id="views-templates-2" data-x="1500" data-y="12000">
+        <h3>Views &amp; Templates(2)</h3>
+        <pre class="prettyprint"><code class="language-javascript">...
 &lt;table class=&quot;table tasks&quot;&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -489,8 +496,8 @@ misho.fullName(); //eval code</code></pre>
 ...</code></pre>
     </div>
 
-    <div class="step" id="views-templates-2" data-x="1500" data-y="12000">
-        <h3>Views &amp; Templates(2)</h3>
+    <div class="step" id="views-templates-3" data-x="3000" data-y="12000">
+        <h3>Views &amp; Templates(3)</h3>
         <pre class="prettyprint"><code class="language-javascript">...
     &lt;tbody&gt;
     {{#each task in controller.arrangedContent}}
@@ -500,6 +507,12 @@ misho.fullName(); //eval code</code></pre>
           &lt;td&gt; {{task.performer.email}} &lt;/td&gt;
           &lt;td class=&quot;task-description&quot;&gt; {{task.description}} &lt;/td&gt;
           &lt;td&gt; {{task.state}} &lt;/td&gt;
+...</code></pre>
+    </div>
+
+    <div class="step" id="views-templates-4" data-x="4500" data-y="12000">
+        <h3>Views &amp; Templates(4)</h3>
+        <pre class="prettyprint"><code class="language-javascript">...
           &lt;td&gt; &lt;div class=&quot;btn-group task-options pull-right&quot;&gt;
               {{#linkTo &quot;task.view&quot; task class=&quot;btn-view-task&quot;}}
                 &lt;i class=&quot;icon-eye-open&quot;&gt;&lt;/i&gt;
@@ -514,8 +527,92 @@ misho.fullName(); //eval code</code></pre>
 &lt;/table&gt;</code></pre>
     </div>
 
-    <div class="step" data-x="3000" data-y="12000">
+    <div class="step" data-x="6000" data-y="12000">
         <img src="images/happy-minions.jpg" />
+    </div>
+
+    <div class="step" data-x="0" data-y="13500">
+        <h3>Model</h3>
+        <img src="images/mario-objects.jpg" />
+    </div>
+
+    <div class="step" id="ember-data" data-x="1500" data-y="13500">
+        <h3>Ember Data</h3>
+        <img src="images/tomster-under-construction-sm.png" />
+        <ul>
+            <li>Adapters for different storages</li>
+            <li>CRUD methods</li>
+            <li>Model lifecycle</li>
+            <li>Relations between models</li>
+            <li><span class="bold">NOT</span> production ready</li>
+        </ul>
+    </div>
+
+    <div class="step" id="custom-adapters" data-x="3000" data-y="13500">
+        <h3>Custom adapters</h3>
+        <div>
+            <img src="images/kompot.jpg" />
+            <img src="images/lutenica.jpg" />
+            <img src="images/rakia-buddies.jpg" />
+            <img src="images/turshiq.jpg" />
+        </div>
+    </div>
+
+    <div class="step" id="web-apps" data-x="4500" data-y="13500">
+        <h3>Types of mobile applications</h3>
+        <img src="images/app-web-native.jpg" />
+    </div>
+
+    <div class="step" data-x="6000" data-y="13500">
+        <img src="images/livemargin-reader.jpg" />
+    </div>
+
+    <div class="step" data-x="0" data-y="15000">
+        <h3>Now you are playing with power</h3>
+        <img src="images/Super_Mario_Brothers_Fanart_by_living_oxymoron.jpg" />
+    </div>
+
+    <div class="step" data-x="1500" data-y="15000">
+        <h3>...not quite</h3>
+        <ul>
+            <li>Bad for SEO, not crawlable by default</li>
+            <li>Quite a steep learning curve</li>
+            <li>Used to be quite unstable</li>
+            <li>Handlebars template syntax</li>
+            <li>Not straightforward to implement lazy models</li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="3000" data-y="15000">
+        <h3>In the end</h3>
+        <img src="images/mario-end.gif" />
+    </div>
+
+    <div class="step" data-x="4500" data-y="15000">
+        <h3>Resources:</h3>
+        <ul>
+            <li><a target="_blank" href="http://emberjs.com/">Ember.js official site</a></li>
+            <li><a target="_blank" href="http://discuss.emberjs.com/">Ember.js official discussion forum</a></li>
+            <li><a target="_blank" href="https://github.com/discourse/discourse">Discourse source code - next level forum written in Ember.js</a></li>
+            <li><a target="_blank" href="https://twitter.com/emberjsbulgaria">Ember.js Bulgaria twitter</a></li>
+            <li><a target="_blank" href="https://github.com/meddle0x53/tmangr">Taskmanager (examples in presentation) source code</a></li>
+            <li><a target="_blank" href=" https://github.com/veselinn/ember-openfest-presentation">Presentation source code</a></li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="6000" data-y="15000">
+        <h3>Resources:</h3>
+        <ul>
+            <li><a target="_blank" href="http://meddle0x53.wordpress.com/">Meddle's blog</a></li>
+            <li><a target="_blank" href="http://www.manning.com/skeie/">Ember.js in Action book</a></li>
+            <li><a target="_blank" href="http://emberweekly.com/">Emberweekly - the latest Ember.js news, tips and code</a></li>
+            <li><a target="_blank" href="https://groups.google.com/forum/#!forum/ember-js-bulgaria">Ember.js google group</a></li>
+        </ul>
+    </div>
+
+    <div class="step" data-x="0" data-y="16500">
+        <h3>Questions?</h3>
+        <img src="images/monkey-thinking.jpg" />
     </div>
 
     <div id="overview" class="step" data-x="3000" data-y="4500" data-scale="15" data-rotate-z="90">
