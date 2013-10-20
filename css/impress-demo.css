@@ -72,12 +72,12 @@ body {
     min-height: 740px;
     /*background-color: #faf4f1;*/
     background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(220, 255, 220)), to(rgb(170, 199, 170)));
+    background: -webkit-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:    -moz-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:     -ms-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:      -o-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:         radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
 }
 
 /*
@@ -345,7 +345,9 @@ p {
     to be able to click on other steps.
 
 */
-#overview { display: none }
+#overview { 
+  display: none;
+}
 
 /*
     We also make other steps visible and give them a pointer cursor using the
