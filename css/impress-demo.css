@@ -94,12 +94,12 @@ body {
     min-height: 740px;
     /*background-color: #faf4f1;*/
     background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(167, 202, 182)), to(rgb(170, 245, 173)));
-    background: -webkit-radial-gradient(rgb(167, 212, 182), rgb(170, 245, 173));
-    background:    -moz-radial-gradient(rgb(167, 212, 182), rgb(170, 245, 173));
-    background:     -ms-radial-gradient(rgb(167, 212, 182), rgb(170, 245, 173));
-    background:      -o-radial-gradient(rgb(167, 212, 182), rgb(170, 245, 173));
-    background:         radial-gradient(rgb(167, 212, 182), rgb(170, 245, 173));
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(220, 255, 220)), to(rgb(170, 199, 170)));
+    background: -webkit-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:    -moz-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:     -ms-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:      -o-radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
+    background:         radial-gradient(rgb(220, 255, 220), rgb(170, 199, 170));
 }
 
 /*
