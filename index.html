@@ -16,29 +16,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
-<!--
-    
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-    
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-    
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-    
-    The class name on body element also depends on currently active presentation step. More details about
-    it can be found later, when `hint` element is being described.
-    
--->
 <body class="impress-not-supported">
 
-<!--
-    For example this fallback message is only visible when there is `impress-not-supported` class on body.
--->
 <div class="fallback-message">
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
@@ -610,24 +589,31 @@ if ("ontouchstart" in document.documentElement) {
 
   document.addEventListener("keyup", function ( event ) {
     if ( event.keyCode === 67 ) {
+      // 'c'
       impressApi.goto( 'contents' );
     }
     if ( event.keyCode === 72 ) {
+      // 'h'
       impressApi.goto( 'history-title' );
     }
     if ( event.keyCode === 69 ) {
+      // 'e'
       impressApi.goto( 'ember-title' );
     }
     if ( event.keyCode === 65 ) {
+      // 'a'
       impressApi.goto( 'ember-architecture' );
     }
     if ( event.keyCode === 82 ) {
+      // 'r'
       impressApi.goto( 'ember-resources' );
     }
     if ( event.keyCode === 79 ) {
+      // 'o'
       impressApi.goto( 'overview' );
     }
     if ( event.keyCode === 84 ) {
+      // 't'
       impressApi.goto( 'title' );
     }
   }, false);
