@@ -322,7 +322,7 @@ p {
 
 #custom-adapters img:first-child {
     position: relative;
-    top: 37px;
+    top: 50px;
 }
 
 #custom-adapters img {
@@ -337,6 +337,10 @@ p {
 
 #web-apps img {
     width: 80%;
+}
+
+#the-end img {
+    width: 100%;
 }
 
 /*
@@ -525,10 +529,4 @@ p {
     not needed at all...
 
     But it was fun to learn about it, wasn't it?
-*/
-
-/*
-    That's all I have for you in this file.
-    Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
-    for you.
 */
