@@ -214,6 +214,10 @@ p {
     font-size: 35px;
 }
 
+.step pre.prettyprint {
+    padding: 15px;
+}
+
 .step pre {
     border-radius: 15px;
     background-color: rgba(115, 99, 81, 0.2);
