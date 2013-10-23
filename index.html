@@ -588,29 +588,33 @@ if ("ontouchstart" in document.documentElement) {
   impressApi.init();
 
   document.addEventListener("keyup", function ( event ) {
+    if ( event.keyCode === 65 ) {
+      // 'a'
+      impressApi.goto( 'ember-architecture' );
+    }
+    if ( event.keyCode === 66 ) {
+      // 'b'
+      window.history.back()
+    }
     if ( event.keyCode === 67 ) {
       // 'c'
       impressApi.goto( 'contents' );
-    }
-    if ( event.keyCode === 72 ) {
-      // 'h'
-      impressApi.goto( 'history-title' );
     }
     if ( event.keyCode === 69 ) {
       // 'e'
       impressApi.goto( 'ember-title' );
     }
-    if ( event.keyCode === 65 ) {
-      // 'a'
-      impressApi.goto( 'ember-architecture' );
-    }
-    if ( event.keyCode === 82 ) {
-      // 'r'
-      impressApi.goto( 'ember-resources' );
+    if ( event.keyCode === 72 ) {
+      // 'h'
+      impressApi.goto( 'history-title' );
     }
     if ( event.keyCode === 79 ) {
       // 'o'
       impressApi.goto( 'overview' );
+    }
+    if ( event.keyCode === 82 ) {
+      // 'r'
+      impressApi.goto( 'ember-resources' );
     }
     if ( event.keyCode === 84 ) {
       // 't'
