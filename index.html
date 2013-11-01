@@ -92,7 +92,6 @@
 
     <div class="step" id="history-title" data-x="1200" data-y="2400">
         <h2>How we got here?</h2>
-        <h3>(Brief history)</h3>
 
         <img src="images/evolution-of-mario.gif" />
     </div>
@@ -107,7 +106,7 @@
         <img src="images/java_applet.jpg" />
     </div>
 
-    <div class="step" data-x="0" data-y="4800">
+    <div class="step" id="flash" data-x="0" data-y="4800">
         <h3>Rise of the Flash</h3>
         <img src="images/future-splash-animator-cd.jpg" />
     </div>
@@ -116,21 +115,21 @@
         <img src="images/AJAX-logo.jpg" />
     </div>
 
-    <div class="step" data-x="2400" data-y="4800">
+    <div class="step" id="ajax-transform" data-x="2400" data-y="4800">
         <h3>The AJAX transformation</h3>
         <img src="images/before-and-after-ajax.png" />
     </div>
 
-    <div class="step" data-x="5000" data-y="0">
+    <div class="step" id="ie-browser" data-x="5000" data-y="0">
         <h3>Browsers of the time</h3>
         <img src="images/ie5.jpg" />
     </div>
 
-    <div class="step" data-x="5400" data-y="0" data-z="-800" data-rotate-y="90">
+    <div class="step" id="netscape-browser" data-x="5400" data-y="0" data-z="-800" data-rotate-y="90">
         <img src="images/netscape-404.png" />
     </div>
 
-    <div class="step" data-x="5000" data-y="400" data-z="-800" data-rotate-x="90" data-rotate-y="180">
+    <div class="step" id="mozilla-browser" data-x="5000" data-y="400" data-z="-800" data-rotate-x="90" data-rotate-y="180">
         <img src="images/mozilla.gif" />
     </div>
 
@@ -160,7 +159,7 @@
         <img src="images/frustrated-guy-clarkk.jpg" />
     </div>
 
-    <div class="step big-image" data-x="7400" data-y="3000">
+    <div class="step" id="before-after" data-x="7400" data-y="3000">
         <img src="images/before-and-after.jpg" />
     </div>
 
@@ -196,7 +195,7 @@
         <p>Tom Dale, Peter Wagenet, Trek Glowacki &amp; many more</p>
     </div>
 
-    <div class="step" data-x="9800" data-y="3600">
+    <div class="step" id="object-model-title" data-x="9800" data-y="3600">
         <h3>Ember Object model</h3>
         <img src="images/building-blocks.jpg" />
     </div>
@@ -230,7 +229,8 @@
     <pre class="prettyprint"><code class="language-javascript">var arnold = Man.create({
   firstName: 'Arnold',
   familyName: 'Schwarzenegger'
-  hobbies: ['kicking asses', 'shooting with his shotgun', 'being BACK!'],
+  hobbies: ['kicking asses', 'shooting with his shotgun', 
+    'being BACK!'],
   dislikes: ['someone else eating his cookies'],
 
   sayCatchPhrase: function () {
@@ -257,10 +257,12 @@ SuperHero = Man.extend(SuperPowers, {
         <h3>Using mixins(2)</h3>
         <pre class="prettyprint"><code class="language-javascript">var superMario = SuperHero.create({
   firstName: 'Mario',
-  hobbies: ['saving the princess', 'eating shrooms', 'stomping goombas'],
+  hobbies: ['saving the princess', 'eating shrooms', 
+    'stomping goombas'],
   dislikes: ['turtles', 'goombas'],
 
-  powers: ['jumping', 'breaking bricks', 'going into pipes', 'fire flower!'],
+  powers: ['jumping', 'breaking bricks', 'going into pipes', 
+    'fire flower!'],
 
   sayCatchPhrase: function() {
     console.log("Ita sa mii Mario!!!");
@@ -274,7 +276,7 @@ SuperHero = Man.extend(SuperPowers, {
   nickname: '',
 
   sayCatchPhrase: function() {
-    console.log("Let's drink some Beer/Rakia/Vodka/Rum/Antifreeze!?");
+    console.log("Let's drink some Beer/Rakia/Rum/Antifreeze!?");
   },
 
   fullName: function() {
@@ -305,7 +307,7 @@ meddle.fullName(); // "Nickolay Tzvetinov - Meddle"
 misho.fullName(); // "Mihail Mihailov - Shamara"</code></pre>
     </div>
 
-    <div class="step" data-x="12000" data-y="4800">
+    <div class="step" id="goodies" data-x="12000" data-y="4800">
         <h3>Lots of goodies</h3>
         <img src="images/sugar-spice-everything-nice.jpg" />
     </div>
@@ -436,7 +438,7 @@ misho.fullName(); // "Mihail Mihailov - Shamara"</code></pre>
         <img src="images/happy-minions.jpg" />
     </div>
 
-    <div class="step big-image" data-x="18200" data-y="4800">
+    <div class="step" id="model" data-x="18200" data-y="4800">
         <h3>Model</h3>
         <img src="images/mario-objects.jpg" />
     </div>
