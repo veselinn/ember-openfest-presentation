@@ -327,6 +327,10 @@ p {
     width: 80%;
 }
 
+#arnold img {
+    width: 80%;
+}
+
 #goodies img {
     width: 70%;
 }
@@ -397,6 +401,10 @@ p {
 
 #the-end img {
     width: 100%;
+}
+
+#questions img {
+    width: 70%;
 }
 
 /*
