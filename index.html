@@ -379,7 +379,7 @@ misho.fullName(); // "Mihail Mihailov - Shamara"</code></pre>
     <div class="step" id="views-templates-1" data-x="17000" data-y="2400">
         <h3>Views &amp; Templates(1)</h3>
         <pre class="prettyprint"><code class="language-javascript">&lt;h1&gt;Tasks&lt;/h1&gt;
-&lt;p&gt; {{#linkTo &quot;tasks.new&quot; class=&quot;btn btn-new-task&quot;}}
+&lt;p&gt; {{#linkTo &quot;tasks.new&quot; class=&quot;btn&quot;}}
     &lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt; New task
     {{/linkTo}} 
 &lt;/p&gt;
@@ -389,15 +389,15 @@ misho.fullName(); // "Mihail Mihailov - Shamara"</code></pre>
     <div class="step" id="views-templates-2" data-x="18200" data-y="2400">
         <h3>Views &amp; Templates(2)</h3>
         <pre class="prettyprint"><code class="language-javascript">...
-&lt;table class=&quot;table tasks&quot;&gt;
+&lt;table&gt;
     &lt;thead&gt;
       &lt;tr&gt;
-        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;created_at&quot;}}&gt; Created: &lt;/a&gt; &lt;/th&gt;
-        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;owner.email&quot;}}&gt; Assigner: &lt;/a&gt; &lt;/th&gt;
-        &lt;th class=&quot;span2&quot;&gt; &lt;a {{action sort &quot;performer.email&quot;}}&gt; Assignee: &lt;/a&gt; &lt;/th&gt;
-        &lt;th class=&quot;span4&quot;&gt; &lt;a {{action sort &quot;description&quot;}}&gt; Description: &lt;/a&gt; &lt;/th&gt;
-        &lt;th class=&quot;span1&quot;&gt; &lt;a {{action sort &quot;state&quot;}}&gt; Status: &lt;/a&gt; &lt;/th&gt;
-        &lt;th class=&quot;span1&quot;&gt; Options &lt;/th&gt;
+        &lt;th&gt; &lt;a {{action sort &quot;created_at&quot;}}&gt; Created: &lt;/a&gt; &lt;/th&gt;
+        &lt;th&gt; &lt;a {{action sort &quot;owner.email&quot;}}&gt; Assigner: &lt;/a&gt; &lt;/th&gt;
+        &lt;th&gt; &lt;a {{action sort &quot;performer.email&quot;}}&gt; Assignee: &lt;/a&gt; &lt;/th&gt;
+        &lt;th&gt; &lt;a {{action sort &quot;description&quot;}}&gt; Description: &lt;/a&gt; &lt;/th&gt;
+        &lt;th&gt; &lt;a {{action sort &quot;state&quot;}}&gt; Status: &lt;/a&gt; &lt;/th&gt;
+        &lt;th&gt; Options &lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
 ...</code></pre>
@@ -406,25 +406,25 @@ misho.fullName(); // "Mihail Mihailov - Shamara"</code></pre>
     <div class="step" id="views-templates-3" data-x="19400" data-y="2400">
         <h3>Views &amp; Templates(3)</h3>
         <pre class="prettyprint"><code class="language-javascript">...
-    &lt;tbody&gt;
-    {{#each task in controller.arrangedContent}}
-        &lt;tr&gt;
-          &lt;td&gt; {{task.created_at}} &lt;/td&gt;
-          &lt;td&gt; {{task.owner.email}} &lt;/td&gt;
-          &lt;td&gt; {{task.performer.email}} &lt;/td&gt;
-          &lt;td class=&quot;task-description&quot;&gt; {{task.description}} &lt;/td&gt;
-          &lt;td&gt; {{task.state}} &lt;/td&gt;
+&lt;tbody&gt;
+{{#each task in controller.arrangedContent}}
+    &lt;tr&gt;
+      &lt;td&gt; {{task.created_at}} &lt;/td&gt;
+      &lt;td&gt; {{task.owner.email}} &lt;/td&gt;
+      &lt;td&gt; {{task.performer.email}} &lt;/td&gt;
+      &lt;td class=&quot;task-description&quot;&gt; {{task.description}} &lt;/td&gt;
+      &lt;td&gt; {{task.state}} &lt;/td&gt;
 ...</code></pre>
     </div>
 
     <div class="step" id="views-templates-4" data-x="17000" data-y="3600">
         <h3>Views &amp; Templates(4)</h3>
         <pre class="prettyprint"><code class="language-javascript">...
-          &lt;td&gt; &lt;div class=&quot;btn-group task-options pull-right&quot;&gt;
-              {{#linkTo &quot;task.view&quot; task class=&quot;btn-view-task&quot;}}
+          &lt;td&gt; &lt;div&gt;
+              {{#linkTo &quot;task.view&quot; task}}
                 &lt;i class=&quot;icon-eye-open&quot;&gt;&lt;/i&gt;
               {{/linkTo}}
-              &lt;a class=&quot;btn-delete-task&quot; {{action destroyTask task}}&gt;
+              &lt;a {{action destroyTask task}}&gt;
                 &lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;
               &lt;/a&gt;
           &lt;/div&gt; &lt;/td&gt;
