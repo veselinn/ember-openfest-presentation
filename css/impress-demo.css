@@ -1,4 +1,4 @@
-/*
+
     We start with a good ol' reset.
     That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
 
@@ -183,6 +183,13 @@ a:focus {
 }
 
 .impress-enabled .step.active { opacity: 1 }
+
+/*
+    Code colors
+*/
+.prettyprint span.str {
+    color: rgb(200, 50, 0);
+}
 
 /*
     And now we start to style each step separately.
@@ -578,4 +585,3 @@ p {
     not needed at all...
 
     But it was fun to learn about it, wasn't it?
-*/
